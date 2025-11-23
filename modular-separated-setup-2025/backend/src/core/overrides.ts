@@ -13,8 +13,16 @@ const COLORS = {
 const nativeConsole = globalThis.console;
 
 globalThis.console = new Proxy(nativeConsole, {
-  get(target, prop) { if (prop in COLORS) { return (...args: unknown[]) => { const color = COLORS[prop as keyof typeof COLORS]; Reflect.get(target, prop).call( target, `${color}[${prop.toString().toUpperCase()}]${RESET}`, ...args,); };
-
+  get(target, prop) {
+    if (prop in COLORS) {
+      return (...args: unknown[]) => {
+        const color = COLORS[prop as keyof typeof COLORS];
+        Reflect.get(target, prop).call(
+          target,
+          `${color}[${prop.toString().toUpperCase()}]${RESET}`,
+          ...args,
+        );
+      };
     }
     return target[prop as keyof typeof target];
   },
