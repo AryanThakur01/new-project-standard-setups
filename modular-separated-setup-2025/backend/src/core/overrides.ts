@@ -23,7 +23,6 @@ globalThis.console = new Proxy(nativeConsole, {
           ...args,
         );
       };
-    }
-    return target[prop as keyof typeof target];
+    } else return () => console.warn(`Unknown console method ${String(prop)}. Please use one of ${Object.keys(COLORS).join(', ')}.`);
   },
 });
