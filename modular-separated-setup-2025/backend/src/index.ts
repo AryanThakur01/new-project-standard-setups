@@ -1,4 +1,4 @@
-import './core/overrides'; // Import the logger to override global console
+import './core/overrides.js'; // Import the logger to override global console
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 
