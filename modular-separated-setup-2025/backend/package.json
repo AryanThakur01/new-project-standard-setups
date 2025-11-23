@@ -11,7 +11,10 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts}": ["prettier --write", "eslint --fix"] 
+    "**/*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@hono/node-server": "^1.19.6",
