@@ -1,8 +1,2 @@
-```
-npm install
-npm run dev
-```
-
-```
-open http://localhost:3000
-```
+- Note: We've used prisma 6.0.0 because 7.0.0 is not compatible mongodb here. Since this project follows prisma with mongodb, we have to use prisma 6.0.0.
+- If using anywhere else, please update prisma to 7.0.0 or above.

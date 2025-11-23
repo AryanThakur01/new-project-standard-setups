@@ -1,0 +1,5 @@
+model Configs {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  key       CONFIG_KEYS   @unique
+  value     String
+}

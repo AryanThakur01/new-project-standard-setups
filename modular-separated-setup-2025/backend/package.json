@@ -8,7 +8,11 @@
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
     "format": "prettier --write ./src/",
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "lint-staged": {
     "**/*.{js,ts}": [
@@ -18,14 +22,17 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.19.6",
+    "@prisma/client": "^6.0.0",
+    "dotenv": "^17.2.3",
     "hono": "^4.10.6"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
+    "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "3.6.2",
+    "prisma": "^6.0.0",
     "tsx": "^4.7.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.47.0"

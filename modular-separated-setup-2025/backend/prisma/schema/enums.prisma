@@ -1,0 +1,5 @@
+// We define all enums used in the Prisma schema here
+
+enum CONFIG_KEYS {
+  VERSION
+}
